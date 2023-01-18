@@ -2,7 +2,7 @@
 view: heart_rate_zones {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `starterkit-344119.fitbit.heart_rate_zones`
+  sql_table_name: `device-connect-fitbit-368117.fitbit.heart_rate_zones`
     ;;
   drill_fields: [id]
   # This primary key is the unique key for this table in the underlying database.

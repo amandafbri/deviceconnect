@@ -1,11 +1,11 @@
 view: administrative_table {
   derived_table: {
-    sql: with cte1 as (select id, min(date) as erd from `starterkit-344119.fitbit.activity_summary`group by id),
-           cte2 as (select id, max(date) as mrp from `starterkit-344119.fitbit.activity_summary` group by id),
-           cte3 as (select id, round(avg(steps),0) as avs from `starterkit-344119.fitbit.activity_summary` group by id),
-           cte4 as (select id, round(avg(resting_heart_rate),0) as ahr from `starterkit-344119.fitbit.activity_summary`group by id),
-           cte5 as (select id, round(((avg(sedentary_minutes + lightly_active_minutes + fairly_active_minutes + very_active_minutes)/1440)*100),2) as twd from `starterkit-344119.fitbit.activity_summary`group by id),
-           cte6 as (select id, round(avg(fat_burn_minutes + cardio_minutes + peak_minutes),2) as acm from `starterkit-344119.fitbit.heart_rate_zones`group by id)
+    sql: with cte1 as (select id, min(date) as erd from `device-connect-fitbit-368117.fitbit.activity_summary`group by id),
+           cte2 as (select id, max(date) as mrp from `device-connect-fitbit-368117.fitbit.activity_summary` group by id),
+           cte3 as (select id, round(avg(steps),0) as avs from `device-connect-fitbit-368117.fitbit.activity_summary` group by id),
+           cte4 as (select id, round(avg(resting_heart_rate),0) as ahr from `device-connect-fitbit-368117.fitbit.activity_summary`group by id),
+           cte5 as (select id, round(((avg(sedentary_minutes + lightly_active_minutes + fairly_active_minutes + very_active_minutes)/1440)*100),2) as twd from `device-connect-fitbit-368117.fitbit.activity_summary`group by id),
+           cte6 as (select id, round(avg(fat_burn_minutes + cardio_minutes + peak_minutes),2) as acm from `device-connect-fitbit-368117.fitbit.heart_rate_zones`group by id)
       select cte1.id, cte1.erd, cte2.mrp, cte3.avs, cte4.ahr, cte5.twd, cte6.acm
       from cte1
         join cte2 on cte1.id = cte2.id

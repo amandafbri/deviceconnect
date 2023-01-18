@@ -2,7 +2,7 @@
 view: social {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `starterkit-344119.fitbit.social`
+  sql_table_name: `device-connect-fitbit-368117.fitbit.social`
     ;;
   drill_fields: [id]
   # This primary key is the unique key for this table in the underlying database.

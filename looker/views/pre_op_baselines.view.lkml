@@ -3,9 +3,9 @@ view: pre_op_baselines {
     sql: select acs.id,
           round(avg(steps)) as `pre_op_steps_baseline`,
           round(avg(hrz.fat_burn_minutes + hrz.cardio_minutes + hrz.peak_minutes)) as `pre_op_active_minutes_baseline`
-      from `starterkit-344119.fitbit.activity_summary` acs
-      join `starterkit-344119.fitbit.heart_rate_zones` as hrz on acs.id = hrz.id and acs.date = hrz.date
-      join `starterkit-344119.fitbit.profile` p on acs.id = p.id
+      from `device-connect-fitbit-368117.fitbit.activity_summary` acs
+      join `device-connect-fitbit-368117.fitbit.heart_rate_zones` as hrz on acs.id = hrz.id and acs.date = hrz.date
+      join `device-connect-fitbit-368117.fitbit.profile` p on acs.id = p.id
       where acs.date between p.surgery_date-14 AND p.surgery_date
       group by id, p.surgery_date
        ;;
