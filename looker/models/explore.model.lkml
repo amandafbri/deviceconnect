@@ -1,9 +1,9 @@
-connection: "device-connect-demo"
+connection: "device-connect-fitbit"
 
-include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
+include: "/looker/views/*.view.lkml"                # include all views in the views/ folder in this project
 #include: "my_dashboard.dashboard.lookml"
 # include a LookML dashboard called my_dashboard
-include: "/dashboards/*.dashboard.lookml"
+include: "/looker/dashboards/*.dashboard.lookml"
 
 explore: activity_summary {
   label: "Daily Summary"
